@@ -1,5 +1,5 @@
 # Proyecto-iPasen
-Proyecto Grupal
+## Proyecto Grupal: Adrian Aránega, Jhonal Jesus, Alejandro González, Pablo Jiménez y David Sánchez.
 # Proyecto iPasen:
 
 **Nuestro proyecto va a consistir en una interfaz gráfica la cual nada más abrirla nos aparecerá un login en el cual podemos iniciar sesión como usuario o como administrador, el usuario será el alumno y el administrador el profesor. 
