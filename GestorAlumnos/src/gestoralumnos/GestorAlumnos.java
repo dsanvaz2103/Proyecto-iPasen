@@ -11,7 +11,21 @@ public class GestorAlumnos {
         alumnos = ArchivoAlumnos.cargarAlumnos();
     }
 
-    public void agregarAlumno(Alumno alumno) {
+    // Método para agregar un alumno
+    public void agregarAlumno(Alumno alumno)throws DniDuplicadoException {
+        // Verificar si el alumno ya existe por su DNI
+        for (Alumno a : alumnos) {
+            if (a.getDni().equalsIgnoreCase(alumno.getDni())) {
+                try {
+                    throw new DniDuplicadoException("Ya existe un alumno con el DNI: " + alumno.getDni());
+                } catch (DniDuplicadoException e) {
+                    System.err.println(e.getMessage()); // Mostrar el mensaje de error
+                    return;
+                }
+            }
+        }
+
+        // Si el DNI no está duplicado, agregar el alumno
         alumnos.add(alumno);
         ArchivoAlumnos.guardarAlumnos(alumnos);
         System.out.println("Alumno añadido.");

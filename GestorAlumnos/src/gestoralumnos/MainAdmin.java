@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainAdmin {
     public static void main(String[] args) {
-        GestorAlumnos gestor = new GestorAlumnos();
+        GestorAlumnos gestor = new GestorAlumnos() ;
         Scanner sc = new Scanner(System.in);
         int opcion;
 
@@ -18,7 +18,7 @@ public class MainAdmin {
             System.out.println("6. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine(); // Consumir el salto de línea
 
             switch (opcion) {
                 case 1:
@@ -41,14 +41,14 @@ public class MainAdmin {
                     
                     System.out.print("Edad: ");
                     int edad = sc.nextInt();
-                    sc.nextLine();  
+                    sc.nextLine();  // Consumir el salto de línea
                     
                     System.out.print("Curso: ");
                     String curso = sc.nextLine();
                     
                     System.out.print("Nota media: ");
                     double notaMedia = sc.nextDouble();
-                    sc.nextLine();  
+                    sc.nextLine();  // Consumir el salto de línea
                     
                     System.out.print("Horario: ");
                     String horario = sc.nextLine();
@@ -64,7 +64,13 @@ public class MainAdmin {
                     nuevoAlumno.setFaltas(faltas);
                     nuevoAlumno.setHorario(horario);
                     nuevoAlumno.setAgenda(agenda);
-                    gestor.agregarAlumno(nuevoAlumno);
+
+                    // Intentar agregar el alumno y manejar la excepción si el DNI está duplicado
+                    try {
+                        gestor.agregarAlumno(nuevoAlumno);
+                    } catch (DniDuplicadoException e) {
+                        System.err.println(e.getMessage()); // Mostrar el mensaje de la excepción
+                    }
                     break;
                 case 4:
                     System.out.print("DNI del alumno a modificar: ");
@@ -80,7 +86,7 @@ public class MainAdmin {
                     System.out.println("Saliendo del gestor...");
                     break;
                 default:
-                    System.out.println("Opcion no valida");
+                    System.out.println("Opción no válida");
                     break;
             }
 
