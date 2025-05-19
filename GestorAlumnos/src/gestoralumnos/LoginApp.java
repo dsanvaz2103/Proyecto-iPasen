@@ -13,17 +13,18 @@ public class LoginApp {
         String tipo = sc.nextLine();
 
         switch (tipo) {
-            case "admin":
-                System.out.print("Introduce la contraseña de administrador: ");
-                String contrasena = sc.nextLine();
+        case "admin":
+            System.out.print("Introduce la contraseña de administrador: ");
+            contrasena = sc.nextLine();
 
-                if (contrasena.equals("1234")) {
-                    System.out.println("Acceso concedido como ADMIN.");
-                    MainAdmin.main(null);
-                } else {
-                    System.out.println("Contraseña incorrecta. Acceso denegado.");
-                }
-                break;
+            while (!contrasena.equals("1234")) {
+                System.out.println("Contraseña incorrecta. Vuelve a intentarlo:");
+                contrasena = sc.nextLine();
+            }
+
+            System.out.println("Acceso concedido como ADMIN.");
+            MainAdmin.main(null);
+            break;
 
             case "alumno":
                 System.out.print("Introduce tu DNI: ");
