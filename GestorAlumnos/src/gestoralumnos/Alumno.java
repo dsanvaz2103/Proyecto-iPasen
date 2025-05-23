@@ -1,7 +1,10 @@
-package gestoralumnos;
+package GestorAlumnos;
 
-public class Alumno {
+import java.io.Serializable;
 
+public class Alumno implements Serializable { // IMPLEMENTA Serializable PARA SERIALIZACIÓN BINARIA
+
+    private static final long serialVersionUID = 1L; // SERIAL VERSION UID
     private String nombre, apellido, dni, curso, horario, agenda, faltas;
     private int edad;
     private double notaMedia;
@@ -12,7 +15,7 @@ public class Alumno {
         this.dni = dni;
         this.edad = edad;
         this.curso = curso;
-        this.notaMedia = 0.0;
+        this.notaMedia = notaMedia; // CORRECCIÓN: INICIALIZAR CON EL VALOR PASADO
         this.horario = "Lunes a Viernes de 8:00 a 14:30";
         this.agenda = "Sin eventos programados.";
         this.faltas = "No tienes faltas de asistencia";

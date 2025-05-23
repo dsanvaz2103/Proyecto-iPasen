@@ -1,4 +1,4 @@
-package gestoralumnos;
+package GestorAlumnos;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,23 +12,30 @@ public class GestorAlumnos {
     }
 
     // Método para agregar un alumno
-    public void agregarAlumno(Alumno alumno)throws DniDuplicadoException {
+    public void agregarAlumno(Alumno alumno) throws DniDuplicadoException {
         // Verificar si el alumno ya existe por su DNI
         for (Alumno a : alumnos) {
             if (a.getDni().equalsIgnoreCase(alumno.getDni())) {
-                try {
-                    throw new DniDuplicadoException("Ya existe un alumno con el DNI: " + alumno.getDni());
-                } catch (DniDuplicadoException e) {
-                    System.err.println(e.getMessage()); // Mostrar el mensaje de error
-                    return;
-                }
+                throw new DniDuplicadoException("Ya existe un alumno con el DNI: " + alumno.getDni());
             }
         }
 
-        // Si el DNI no está duplicado, agregar el alumno
-        alumnos.add(alumno);
-        ArchivoAlumnos.guardarAlumnos(alumnos);
-        System.out.println("Alumno añadido.");
+        try {
+            // Validar que los datos no sean nulos o inválidos
+            if (alumno.getDni() == null || alumno.getDni().isEmpty() ||
+                    alumno.getNombre() == null || alumno.getNombre().isEmpty() ||
+                    alumno.getApellido() == null || alumno.getApellido().isEmpty() ||
+                    alumno.getNotaMedia() < 0) {
+                throw new DatoInvalidoException("Datos del alumno inválidos. Verifica nombre, apellido, DNI o nota.");
+            }
+
+            // Si todo es válido, se añade el alumno
+            alumnos.add(alumno);
+            ArchivoAlumnos.guardarAlumnos(alumnos);
+            System.out.println("Alumno añadido.");
+        } catch (DatoInvalidoException e) {
+            System.err.println("ERROR: " + e.getMessage());
+        }
     }
 
     public void mostrarAlumnos() {
@@ -117,4 +124,5 @@ public class GestorAlumnos {
         }
         return null;
     }
+
 }

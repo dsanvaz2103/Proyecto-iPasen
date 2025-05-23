@@ -1,5 +1,4 @@
-
-package gestoralumnos;
+package GestorAlumnos;
 
 import java.util.Scanner;
 
@@ -10,38 +9,41 @@ public class LoginApp {
 
         System.out.println("--- BIENVENIDO AL SISTEMA ---");
         System.out.print("¿Eres 'admin' o 'alumno'?: ");
-        String tipo = sc.nextLine();
+        String tipo = sc.nextLine().trim().toLowerCase(); // NORMALIZAR ENTRADA
 
         switch (tipo) {
-        case "admin":
-            System.out.print("Introduce la contraseña de administrador: ");
-            contrasena = sc.nextLine();
+            case "admin":
+                int intentos = 0;
+                String contrasena;
+                do {
+                    System.out.print("Introduce la contraseña de administrador: ");
+                    contrasena = sc.nextLine();
+                    intentos++;
+                    if (intentos > 3) {
+                        System.out.println("Demasiados intentos fallidos. Acceso denegado.");
+                        return;
+                    }
+                } while (!contrasena.equals("1234"));
 
-            while (!contrasena.equals("1234")) {
-                System.out.println("Contraseña incorrecta. Vuelve a intentarlo:");
-                contrasena = sc.nextLine();
-            }
-
-            System.out.println("Acceso concedido como ADMIN.");
-            MainAdmin.main(null);
-            break;
+                System.out.println("Acceso concedido como ADMIN.");
+                MainAdmin.main(null);
+                break;
 
             case "alumno":
                 System.out.print("Introduce tu DNI: ");
-                String dni = sc.nextLine();
+                String dni = sc.nextLine().trim();
 
                 Alumno alumno = gestor.buscarAlumnoPorDni(dni);
 
                 if (alumno != null) {
-
-                    AlumnoApp.iniciarSesion(alumno); 
+                    AlumnoApp.iniciarSesion(alumno);
                 } else {
                     System.out.println("DNI no encontrado. Acceso denegado.");
                 }
                 break;
 
             default:
-                System.out.println("Opcion no reconocida.");
+                System.out.println("Opción no reconocida.");
         }
     }
 }

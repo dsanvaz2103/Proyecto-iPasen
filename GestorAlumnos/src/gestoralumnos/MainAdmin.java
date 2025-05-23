@@ -1,4 +1,4 @@
-package gestoralumnos;
+package GestorAlumnos;
 
 import java.util.Scanner;
 
@@ -32,33 +32,33 @@ public class MainAdmin {
                 case 3:
                     System.out.print("Nombre: ");
                     String nombre = sc.nextLine();
-                    
+
                     System.out.print("Apellido: ");
                     String apellido = sc.nextLine();
-                    
+
                     System.out.print("DNI: ");
                     String dniNuevo = sc.nextLine();
-                    
+
                     System.out.print("Edad: ");
                     int edad = sc.nextInt();
                     sc.nextLine();  // Consumir el salto de línea
-                    
+
                     System.out.print("Curso: ");
                     String curso = sc.nextLine();
-                    
+
                     System.out.print("Nota media: ");
                     double notaMedia = sc.nextDouble();
                     sc.nextLine();  // Consumir el salto de línea
-                    
+
                     System.out.print("Horario: ");
                     String horario = sc.nextLine();
-                    
+
                     System.out.print("Agenda: ");
                     String agenda = sc.nextLine();
-                    
+
                     System.out.print("Faltas de asistencia: ");
                     String faltas = sc.nextLine();
-                    
+
                     Alumno nuevoAlumno = new Alumno(nombre, apellido, dniNuevo, edad, curso, notaMedia);
                     nuevoAlumno.setNotaMedia(notaMedia);
                     nuevoAlumno.setFaltas(faltas);
