@@ -1,0 +1,3 @@
+Adrian;Aranegas;12345678A;18;1º DAW;5.0;08:30-15:00;Nada
+Alejandro;Gonzalez;24514922G;19;1º DAW;8.0;08:30-15:00;Nada
+David;Sanchez;54360167N;20;1º DAW;7.0;08:30-15:00;Nada
