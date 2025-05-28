@@ -1,5 +1,3 @@
-package GestorAlumnos;
-
 import java.io.Serializable;
 
 public class Alumno implements Serializable { // IMPLEMENTA Serializable PARA SERIALIZACIÓN BINARIA

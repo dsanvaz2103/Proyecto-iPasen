@@ -1,5 +1,3 @@
-package GestorAlumnos;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +9,7 @@ public class GestorAlumnos {
         alumnos = ArchivoAlumnos.cargarAlumnos();
     }
 
-    // Método para agregar un alumno
+    // Metodo para agregar un alumno
     public void agregarAlumno(Alumno alumno) throws DniDuplicadoException {
         // Verificar si el alumno ya existe por su DNI
         for (Alumno a : alumnos) {
@@ -124,5 +122,10 @@ public class GestorAlumnos {
         }
         return null;
     }
+
+    public ArrayList<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
 
 }

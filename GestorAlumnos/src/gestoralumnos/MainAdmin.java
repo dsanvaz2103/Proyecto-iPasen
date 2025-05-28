@@ -1,5 +1,3 @@
-package GestorAlumnos;
-
 import java.util.Scanner;
 
 public class MainAdmin {

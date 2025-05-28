@@ -1,5 +1,3 @@
-package GestorAlumnos;
-
 import java.io.*;
 import java.util.ArrayList;
 

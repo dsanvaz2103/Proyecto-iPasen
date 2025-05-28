@@ -1,5 +1,3 @@
-package GestorAlumnos;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
