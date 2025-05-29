@@ -1,0 +1,4 @@
+Alejandro;Gonzalez;24514922G;19;1º DAW;8.5;08:30-15:00;Nada
+David;Sanchez;54360167N;20;1º DAW;7.0;08:30-15:00;Nada
+Pablo;Jimenez;87654321A;20;1º DAW;7.0;08:30-15:00;Examen BBDD Lunes 09:30
+Adrian;Aranegas;12345678A;19;1º DAW;9.2;08:30-15:00;Recuperación Sistemas Lunes 12:00
