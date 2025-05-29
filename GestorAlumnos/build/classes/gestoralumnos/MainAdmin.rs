@@ -1,1 +1,0 @@
-GestorAlumnos.MainAdmin

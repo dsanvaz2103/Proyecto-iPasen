@@ -1,2 +1,0 @@
-GestorAlumnos.AlumnoApp
-gestoralumnos.s

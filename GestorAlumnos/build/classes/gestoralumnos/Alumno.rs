@@ -1,2 +1,0 @@
-GestorAlumnos.Alumno
-gestoralumnos.Alumnos

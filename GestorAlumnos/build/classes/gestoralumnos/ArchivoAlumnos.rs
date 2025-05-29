@@ -1,2 +1,0 @@
-gestoralumnos.s
-GestorAlumnos.ArchivoAlumnos
